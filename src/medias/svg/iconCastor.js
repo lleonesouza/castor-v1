@@ -1,9 +1,9 @@
 import React from "react";
 import {LogoIcon} from '../../css/nav/navCSS'
 
-function Icon({navOn, onClick}) {
+function Icon() {
   return (
-    <LogoIcon navOn onClick={() => onClick({display: 'none'})}
+    <LogoIcon 
     style={{height: '90%',
         width: '100px',
       }}

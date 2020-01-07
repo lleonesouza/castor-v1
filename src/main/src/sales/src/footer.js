@@ -1,7 +1,6 @@
-import React, {useState, useContext, Fragment} from "react";
+import React, {useState, Fragment} from "react";
 import {InputDiscount, Close, Pa, PaymentDiv, Button, Footer } from "../css";
 import Submit from "../../../../medias/lotties/ok";
-import {Context} from '../../../../redux/contexts'
 import Cash from "../../../../medias/lotties/cash";
 import Debit from "../../../../medias/lotties/debit";
 import Credit from "../../../../medias/lotties/credit";
@@ -9,7 +8,6 @@ import DailogCash from "./dialogCashInput"
 
 export default function footer({totalItems}) {
 
-  let {postTransaction} =  useContext(Context).actions
   let [payment , setPayment] = useState(null)
   let [openCash, setOpenCash ] = useState (false)
 
@@ -47,7 +45,7 @@ export default function footer({totalItems}) {
       total: sum() - discount,
       discount: discount,
     };
-    postTransaction(transaction)
+    console.log(transaction)
     }else{
       alert('Ops! Falta adicionar o método de pagamento ou o produto.')
     }

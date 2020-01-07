@@ -1,13 +1,9 @@
 import React, {useContext, useState} from 'react'
-import {Context} from '../../../redux/contexts'
+
 
 export default function config() {
-    let context = useContext(Context)
 
-    let [theme, setTheme] = useState(context.userConfig.theme)
 
-    let userInfo = context.userConfig
-    let updateTheme = context.actions.updateTheme
     
     return (
       <div>
@@ -15,21 +11,17 @@ export default function config() {
         <br />
         <br />
         <label>
-          Nome: {userInfo.personal.firstName} {userInfo.personal.lastName}
+          Nome:
         </label>
         <br />
-        <label>CPF: {userInfo.personal.cpf}</label>
+        <label>CPF: </label>
         <br />
         <label>Cell:</label>
         <br />
         <br />
         Tema:
         <select
-          onChange={e =>
-            updateTheme({
-              themeColor: e.target.value
-            })
-          }
+          
         >
           <option value="day">Dia</option>
           <option value="night">Noite</option>
@@ -37,11 +29,7 @@ export default function config() {
         <br />
         Navigation Position:
         <select
-        onChange={e =>
-            updateTheme({
-              navPosition: e.target.value
-            })
-          }>
+       >
           <option value="left">Left</option>
           <option value="right">Right</option>
           <option value="top">Top</option>

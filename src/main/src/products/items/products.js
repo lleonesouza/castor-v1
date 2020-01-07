@@ -1,33 +1,28 @@
-import React, { useState, useContext } from "react";
-import { Link } from "react-router-dom";
-import Item from "./item";
-import { Context } from "../../../../redux/contexts";
+import React, { useTransition, Suspense } from "react";
+import Suspenser from "./suspenser";
+import actions from "../../../../redux/actions/actionTypes";
 
-export default function Products() {
-  let context = useContext(Context);
-  return (
-    <div>
-      <Link to="/"> Voltar </Link>
+const SUSPENSE_CONFIG = { timeoutMs: 2000 };
 
-      código de barras
+export default function Products({ useTracked }) {
+  const {getItems} = actions
+  const [state, dispatch] = useTracked();
+  const [startTransition, isPending] = useTransition(SUSPENSE_CONFIG);
 
-             gs1    ||    padrão
+  const dispatching = () => {
+          dispatch({type: getItems});
+  }
 
-              padrão
-
-              generate id code -> 
-              QR CODE or BarCode 
-
-              Read from -> 
-              webcam, cellphone(aplicativo)
-
-              impress -> 
-              
-              
-      <h1>Produto Produtos:</h1>
-      
-      {context.items ? context.items.map(item => <Item item={item} />) : null}
-      
+  if (typeof(state.items) === 'function') {
+    return (
+      <Suspense fallback={<h1>loading...</h1>}>
+      <Suspenser items={state.items} />
+    </Suspense>
+    );
+  } else {
+    return <div>
+      dispaching...
+      { dispatching() }
     </div>
-  );
+  }
 }

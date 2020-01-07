@@ -1,5 +1,5 @@
 const Menu = require("electron").Menu;
-const selectExcel = require('./dialogs/selectExcel')
+const selectExcel = require('../controllers/IpcMainOn/dialogs/selectExcel')
 
 process.env.NODE_ENV = "!production";
 

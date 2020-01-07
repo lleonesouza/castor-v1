@@ -4,7 +4,7 @@ import Day from './day/day'
 import Month from './month/month'
 import Year from './year/year'
 import Custom from './custom/custom'
-import {Context} from '../../../../redux/contexts'
+
 
 export default function reports() {
     let routes = [
@@ -30,17 +30,14 @@ export default function reports() {
       }
     ];
 
-    let getYearTransactions = () => {
-      actions.getYear()
-    }
+  
 
-    let actions = useContext(Context).actions
+
     
 
     let months = {}
 
     
-    console.log(actions)
     return (
         <div>
                 <Link to="/"> Voltar </Link>

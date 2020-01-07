@@ -1,26 +1,49 @@
-module.exports= {
-    // Excel Tables
-    GET_EXCEL_ITEMS = "get:excel:items",
-    PUT_EXCEL_ITEMS = "put:excel:items",
-    WRITE_EXCEL_ITEMS = "write:excel:items",
+// Paths
+// {...paths, xls: xls}
+// names: 
+// [xls, pdf]
 
 
-    // Path Excel Tables
-    SET_PATH_ITEMS = "set:path:items",
-    GET_PATH_ITEMS = "get:path:items",
-
-
+module.exports = {
     // Transactions
-    POST_TRANSACTION = "post:transaction",
-    POST_TRANSACTION_DAY = "post:transaction:day",
-    POST_TRANSACTION_MONTH = "post:transaction:month",
-    POST_TRANSACTION_YEAR = "post:transaction:year",
+    createTransaction: "post:transaction",
+    createTransactionDay: "post:transaction:day",
+    createTransactionMonth: "post:transaction:month",
+    createTransactionYear: "post:transaction:year",
 
-    GET_TRANSACTION = "get:transaction",
-    GET_TRANSACTION_DAY = "get:transaction:day",
-    GET_TRANSACTION_MONTH = "get:transaction:month",
-    GET_TRANSACTION_YEAR = "get:transaction:year",
+    getTransaction: "get:transaction",
+    getTransactionDay: "get:transaction:day",
+    getTransactionMonth: "get:transaction:month",
+    getTransactionYear: "get:transaction:year",
 
+    // Path
+    createPath: "post:path",
+    getPath: "get:paths",
+    updatePath: "put:path",
+    deletePath: "del:path",
+  
+    // Files Tools
+    importXls: "dialog:import:xls",
+    exportXls: "get:excel:items",
+    updatesXls: "write:excel:items",
+    exportPdf: "get:excel:service",
 
-    
-}
+    // Items
+    createItem: "post:item",
+    getItems: "get:item",
+    updateItem: "put:item",
+    deleteItem: "del:item",
+  
+    // Spendings
+    createSpending: "post:spending",
+    getSpendings: "get:spendings",
+    updateSpending: "put:spending",
+    deleteSpending: "del:spending",
+  
+    // Employee
+    createEmployee: "post:employee",
+    getEmployees: "get:employees",
+    updateEmployee: "put:employee",
+    deleteEmployee: "del:employee"
+  };
+  

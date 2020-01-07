@@ -1,26 +1,58 @@
-module.exports= {
-    // Excel Tables
-    GET_EXCEL_ITEMS = "get:excel:items",
-    PUT_EXCEL_ITEMS = "put:excel:items",
-    WRITE_EXCEL_ITEMS = "write:excel:items",
-
-    // Path Excel Tables
-    SET_PATH_ITEMS = "set:path:items",
-    GET_PATH_ITEMS = "get:path:items",
+// Paths
+// {...paths, xls: xls}
+// names: 
+// [xls, pdf]
 
 
-    // Transactions
-    POST_TRANSACTION = "post:transaction",
-    POST_TRANSACTION_DAY = "post:transaction:day",
-    POST_TRANSACTION_MONTH = "post:transaction:month",
-    POST_TRANSACTION_YEAR = "post:transaction:year",
+module.exports = {
+  // Path
+  createPath: "post:path",
+  getPath: "get:paths",
+  updatePath: "put:path",
+  deletePath: "del:path",
 
-    GET_TRANSACTION = "get:transaction",
-    GET_TRANSACTION_DAY = "get:transaction:day",
-    GET_TRANSACTION_MONTH = "get:transaction:month",
-    GET_TRANSACTION_YEAR = "get:transaction:year",
+  // Excel
+  exportXls: "get:excel:items",
+  importXls: "put:excel:items",
+  updatesXls: "write:excel:items",
 
+  // Pdf
+  exportPdf: "get:excel:service",
+  importPdf: "put:excel:service",
+  updatesPdf: "write:excel:service",
 
-    
-    
-}
+  // Transactions
+  createTransaction: "post:transaction",
+  createTransactionDay: "post:transaction:day",
+  createTransactionMonth: "post:transaction:month",
+  createTransactionYear: "post:transaction:year",
+
+  getTransaction: "get:transaction",
+  getTransactionDay: "get:transaction:day",
+  getTransactionMonth: "get:transaction:month",
+  getTransactionYear: "get:transaction:year",
+
+  // Items
+  createItem: "post:item",
+  getItems: "get:item",
+  updateItem: "put:item",
+  deleteItem: "del:item",
+
+  // Service
+  createService: "post:service",
+  getServices: "get:services",
+  updateService: "put:service",
+  deleteService: "del:service",
+
+  // Spendings
+  createItem: "post:item",
+  getItems: "get:item",
+  updateItem: "put:item",
+  deleteItem: "del:item",
+
+  // Employee
+  createItem: "post:item",
+  getItems: "get:item",
+  updateItem: "put:item",
+  deleteItem: "del:item"
+};

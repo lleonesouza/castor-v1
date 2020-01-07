@@ -82,7 +82,8 @@ let year = {
     october: month,
     november: month,
     december: month
-  }
+  },
+  default: {}
 };
 
 module.exports = { transactions, month, year };

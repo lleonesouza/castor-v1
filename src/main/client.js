@@ -8,10 +8,9 @@ import { ThemeProvider } from "emotion-theming";
 
 // Components
 import Login from "./login/login";
-
+import Home from './src/home/home';
 import Main from "./main";
 import Sales from "./src/sales/sales";
-import Sales2 from "./src/sales/sales2";
 import Reports from "./src/finances/graphs/reports";
 import Products from "./src/products/items/products";
 import Clients from "./src/comingSoon/clients";
@@ -20,6 +19,7 @@ import Admin from "./src/admin/admin";
 import Config from "./src/conf/config";
 
 // Icons
+import IconCastor from '../medias/svg/iconCastor'
 import IconTransactions from "../medias/svg/iconTransactions";
 import IconProducts from "../medias/svg/iconProducts";
 import IconCashier from "../medias/svg/iconCashier";
@@ -54,45 +54,51 @@ export default function App() {
 
   let routes = [
     {
+      title: "Inicio",
+      url: "/",
+      Component: Home,
+      Icon: IconCastor
+    },
+    {
       title: "Caixa",
       url: "/sells",
-      component: Sales2,
+      Component: Sales,
       Icon: IconCashier
     },
     {
       title: "Transações",
       url: "/cashier",
-      component: Transactions,
+      Component: Transactions,
       Icon: IconTransactions
     },
     {
       title: "Produtos",
       url: "/products",
-      component: Products,
+      Component: Products,
       Icon: IconProducts
     },
     {
       title: "Graficos",
       url: "/reports",
-      component: Reports,
+      Component: Reports,
       Icon: IconGraphs
     },
     {
       title: "Clientes",
       url: "/clients",
-      component: Clients,
+      Component: Clients,
       Icon: IconClients
     },
     {
       title: "Admin",
       url: "/admin",
-      component: Admin,
+      Component: Admin,
       Icon: IconAdmin
     },
     {
       title: "Config",
       url: "/config",
-      component: Config,
+      Component: Config,
       Icon: IconConfig
     }
   ];

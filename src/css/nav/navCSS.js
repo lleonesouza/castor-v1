@@ -54,9 +54,20 @@ let FirstDiv = styled.div(props => ({
   zIndex: "-1",
 }));
 
+let SecondDiv = styled.div(props => ({
+  width: '95%',
+  height: '98%',
+  padding: "0",
+  margin: '0',
+  display: "flex",
+  flexDirection: "column",
+  alignItems: "center",
+  justifyContent: "center",
+}));
+
 let LogoIcon = styled.svg(props => ({
     position: 'relative',
   
 }));
 
-export { NavDiv, NavUl, NavLi, FirstDiv, LogoIcon };
+export { NavDiv, NavUl, NavLi, FirstDiv, SecondDiv, LogoIcon };

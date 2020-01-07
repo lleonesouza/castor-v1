@@ -1,6 +1,15 @@
 const url = require("url");
 const path = require("path");
-const routes = require('../routes/index')
+
+// IpcMain Handler
+const useRoutes = require('../routes/useRoutes')
+const actionMap = require('../routes/actionTypes')
+const controllers = require('../controllers/index')
+
+// IpcMain On
+// const useRoutes = require('../routes/useIpcOn')
+// const actionMap = require('../routes/actionTypesOn')
+// const controllers = require('../controllers/indexOn')
 
 var main = (app, mainWindow) => {
   mainWindow.loadURL(
@@ -15,7 +24,7 @@ var main = (app, mainWindow) => {
     app.quit();
   });
 
-  routes.map(route => route())
+  useRoutes({controllers, actionMap}, mainWindow)
 };
 
-module.exports = { main };
+module.exports = main;
